@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Awareness Cartoons — Protecting the Koovam</title>
+<meta name="description" content="Sometimes a single drawing says what a hundred reports cannot. Artwork that carries the Koovam’s story to every home — share it freely.">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body data-archive-section="cartoons">
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" style="text-decoration:none;"><div class="brand"><span class="dot"></span><span lang="en">KOOVAM</span><span lang="ta">கூவம்</span><span class="full-tag" lang="en">&nbsp;·&nbsp;FIELD BRIEFING</span><span class="full-tag" lang="ta">&nbsp;·&nbsp;களப் பணி அறிக்கை</span></div></a>
+    <div class="nav-links">
+      <a href="index.html"><span lang="en">Home</span><span lang="ta">முகப்பு</span></a>
+      <a href="journey.html"><span lang="en">The Journey</span><span lang="ta">பயணம்</span></a>
+      <a href="data.html"><span lang="en">The Data</span><span lang="ta">தரவு</span></a>
+      <a href="action.html"><span lang="en">Take Action</span><span lang="ta">செயல்படுங்கள்</span></a>
+      <a href="videos.html"><span lang="en">Videos</span><span lang="ta">காணொளிகள்</span></a>
+      <a href="cartoons.html" class="active"><span lang="en">Cartoons</span><span lang="ta">கார்ட்டூன்கள்</span></a>
+      <a href="media.html"><span lang="en">In Media</span><span lang="ta">ஊடகங்களில்</span></a>
+    </div>
+    <div class="nav-right">
+      <div class="lang-toggle">
+        <button class="lang-btn-en" data-setlang="en">EN</button>
+        <button class="lang-btn-ta" data-setlang="ta">தமிழ்</button>
+      </div>
+      <button class="burger" id="burgerBtn" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html"><span lang="en">Home</span><span lang="ta">முகப்பு</span></a>
+    <a href="journey.html"><span lang="en">The Journey</span><span lang="ta">பயணம்</span></a>
+    <a href="data.html"><span lang="en">The Data</span><span lang="ta">தரவு</span></a>
+    <a href="action.html"><span lang="en">Take Action</span><span lang="ta">செயல்படுங்கள்</span></a>
+    <a href="videos.html"><span lang="en">Videos</span><span lang="ta">காணொளிகள்</span></a>
+    <a href="cartoons.html" class="active"><span lang="en">Cartoons</span><span lang="ta">கார்ட்டூன்கள்</span></a>
+    <a href="media.html"><span lang="en">In Media</span><span lang="ta">ஊடகங்களில்</span></a>
+  </div>
+</nav>
+
+<header class="page-head">
+  <div class="wrap">
+    <div class="crumb"><span lang="en">THE RIVER RECORD · 02</span><span lang="ta">ஆற்றின் பதிவேடு · 02</span></div>
+    <div class="head-row">
+      <div>
+        <h1><span lang="en">Awareness Cartoons</span><span lang="ta">விழிப்புணர்வு கார்ட்டூன்கள்</span></h1>
+        <p class="lede"><span lang="en">Sometimes a single drawing says what a hundred reports cannot. Artwork that carries the Koovam’s story to every home — share it freely.</span><span lang="ta">நூறு அறிக்கைகள் சொல்லாததை ஒரே ஓவியம் சொல்லும். கூவத்தின் கதையை ஒவ்வொரு வீட்டிற்கும் கொண்டு செல்லும் ஓவியங்கள் — தாராளமாகப் பகிருங்கள்.</span></p>
+      </div>
+      <div><div class="count-pill" data-rr-count>—</div><div><span class="mode-pill" data-rr-mode></span></div></div>
+    </div>
+  </div>
+</header>
+
+<section class="archive-page">
+  <div class="wrap">
+    <div data-rr-toolbar></div>
+    <div class="rr-grid" data-rr-grid></div>
+    <div class="rr-empty" data-rr-empty style="display:none;">
+      <b><span lang="en">No entries match</span><span lang="ta">பொருத்தமான பதிவுகள் இல்லை</span></b>
+      <span lang="en">Try clearing the search or filters — or check back soon, new material is added as the campaign develops.</span>
+      <span lang="ta">தேடல் அல்லது வடிகட்டிகளை அழித்துப் பாருங்கள் — அல்லது விரைவில் மீண்டும் பாருங்கள்.</span>
+    </div>
+  </div>
+</section>
+
+<div class="rr-lightbox" id="rrLightbox" role="dialog" aria-modal="true">
+  <div class="rr-lb-box">
+    <div class="rr-lb-media" id="rrLbMedia">
+      <button class="rr-lb-close" id="rrLbClose" aria-label="Close">✕</button>
+    </div>
+    <div class="rr-lb-body">
+      <div class="rr-date" id="rrLbDate"></div>
+      <h3 id="rrLbTitle"></h3>
+      <p id="rrLbDesc"></p>
+      <div class="rr-lb-row">
+        <a class="rr-lb-link" id="rrLbSource" target="_blank" rel="noopener"></a>
+        <button class="btn btn-primary" id="rrLbShare" style="padding:10px 20px; font-size:13px;"><span lang="en">Share this</span><span lang="ta">இதைப் பகிரவும்</span></button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="share-pop" id="sharePop"></div>
+
+<footer>
+  <div class="wrap">
+    <div class="f-top">
+      <div>
+        <h5><span lang="en">About this campaign</span><span lang="ta">இந்த இயக்கம் பற்றி</span></h5>
+        <p style="line-height:1.7; max-width:44ch;"><span lang="en">An independent citizen awareness initiative, built on facts, photographs, and site visits documented in a Water Resources Department–style briefing. This is not an official Government of Tamil Nadu website.</span><span lang="ta">நீர்வளத் துறை பாணி அறிக்கையில் ஆவணப்படுத்தப்பட்ட உண்மைகள், புகைப்படங்கள் மற்றும் இடப் பார்வைகளின் அடிப்படையில் உருவாக்கப்பட்ட ஒரு சுயேச்சையான குடிமக்கள் விழிப்புணர்வு முன்முயற்சி. இது தமிழ்நாடு அரசின் அதிகாரப்பூர்வ இணையதளம் அல்ல.</span></p>
+      </div>
+      <div>
+        <h5><span lang="en">Sources</span><span lang="ta">மூலங்கள்</span></h5>
+        <ul>
+          <li>Water Resources Department records</li>
+          <li>Chennai Rivers Restoration Trust</li>
+          <li>IIT Madras PFAS study (Prof. Indumathi M. Nambi & G.V. Koulini)</li>
+          <li>TNPCB RTI disclosure</li>
+          <li>The Hindu · The New Indian Express · Times of India · Dinamalar</li>
+          <li>NGT proceedings, OA 548/2024</li>
+        </ul>
+      </div>
+      <div>
+        <h5><span lang="en">Navigate</span><span lang="ta">வழிசெலுத்தல்</span></h5>
+        <ul>
+          <li><a href="index.html#stakes"><span lang="en">Story</span><span lang="ta">கதை</span></a></li>
+          <li><a href="journey.html#journey"><span lang="en">The Journey</span><span lang="ta">பயணம்</span></a></li>
+          <li><a href="data.html#data"><span lang="en">The Data</span><span lang="ta">தரவு</span></a></li>
+          <li><a href="data.html#recommendation"><span lang="en">Recommendation</span><span lang="ta">பரிந்துரை</span></a></li>
+          <li><a href="action.html#act"><span lang="en">Take Action</span><span lang="ta">செயல்படுங்கள்</span></a></li>
+          <li><a href="videos.html"><span lang="en">Koovam Videos</span><span lang="ta">கூவம் காணொளிகள்</span></a></li>
+          <li><a href="cartoons.html"><span lang="en">Awareness Cartoons</span><span lang="ta">விழிப்புணர்வு கார்ட்டூன்கள்</span></a></li>
+          <li><a href="media.html"><span lang="en">Koovam in Media</span><span lang="ta">ஊடகங்களில் கூவம்</span></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="disclaimer">
+      <span lang="en">Tamil translations on this site are provided for accessibility and have not yet been reviewed by a professional translator — please verify critical wording before official or press use. Facts and figures are drawn from a Water Resources Department–style briefing document and the public news reporting cited above; readers should independently verify before relying on them for legal or regulatory action.</span>
+      <span lang="ta">இந்தத் தளத்தில் உள்ள தமிழ் மொழிபெயர்ப்புகள் அணுகல் நோக்கத்திற்காக வழங்கப்பட்டுள்ளன, இன்னும் ஒரு தொழில்முறை மொழிபெயர்ப்பாளரால் சரிபார்க்கப்படவில்லை — அதிகாரப்பூர்வ அல்லது பத்திரிக்கை பயன்பாட்டிற்கு முன் முக்கிய வார்த்தைகளை சரிபார்க்கவும். உண்மைகளும் புள்ளிவிவரங்களும் நீர்வளத் துறை பாணி அறிக்கை மற்றும் மேற்கண்ட பொது செய்தி அறிக்கைகளிலிருந்து பெறப்பட்டவை; சட்ட நடவடிக்கைக்கு நம்பியிருப்பதற்கு முன் வாசகர்கள் சுயாதீனமாக சரிபார்க்க வேண்டும்.</span>
+    </div>
+    <div class="f-bottom">
+      <span>© 2026 · <span lang="en">Independent citizen initiative</span><span lang="ta">சுயேச்சையான குடிமக்கள் முன்முயற்சி</span></span>
+      <span><span lang="en">Built with facts, not funding.</span><span lang="ta">நிதியுதவியால் அல்ல, உண்மைகளால் கட்டப்பட்டது.</span></span>
+    </div>
+  </div>
+</footer>
+
+
+<div class="toast" id="toast"></div>
+
+<script src="assets/config.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="assets/archive.js"></script>
+<script src="assets/site.js"></script>
+</body>
+</html>

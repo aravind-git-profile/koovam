@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Campaign Studio — Koovam</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+<!-- gate -->
+<div class="adm-gate" id="admGate">
+  <div class="adm-gate-card">
+    <div class="k">RIVER RECORD · CONTRIBUTOR ACCESS</div>
+    <h2>Campaign Studio</h2>
+    <p>For campaign volunteers publishing videos, cartoons and press coverage to the archive.</p>
+
+    <div id="gateAuthWrap" style="display:none; text-align:left;">
+      <div class="adm-field">
+        <label style="color:rgba(244,246,241,0.6);">Email</label>
+        <input type="text" id="gateEmail" autocomplete="username" style="background:rgba(10,34,38,0.6); color:var(--white); border-color:var(--line-dark); text-align:left; letter-spacing:normal; font-family:var(--f-body);">
+      </div>
+      <div class="adm-field">
+        <label style="color:rgba(244,246,241,0.6);">Password</label>
+        <input type="password" id="gatePassword" autocomplete="current-password" style="background:rgba(10,34,38,0.6); color:var(--white); border-color:var(--line-dark); text-align:left; letter-spacing:normal;">
+      </div>
+      <button class="btn btn-primary" id="gateSignIn" style="width:100%;">Sign in</button>
+    </div>
+
+    <div id="gatePassWrap" style="display:none;">
+      <input type="password" id="gatePass" placeholder="••••••••" autocomplete="off">
+      <button class="btn btn-primary" id="gateUnlock" style="margin-top:14px; width:100%;">Enter studio</button>
+    </div>
+
+    <div class="adm-gate-err" id="admErr"></div>
+    <a href="index.html" class="btn btn-ghost" style="margin-top:12px; width:100%; color:var(--paper); border-color:var(--line-dark); box-sizing:border-box; display:inline-block; text-decoration:none;">Back to site</a>
+    <div class="adm-mode" id="gateModeNote"></div>
+  </div>
+</div>
+
+<!-- studio -->
+<div id="admStudio" style="display:none;">
+  <div class="adm-top">
+    <div class="t"><b>KOOVAM</b> · CAMPAIGN STUDIO</div>
+    <div style="display:flex; gap:8px;">
+      <button class="btn btn-ghost" id="admLogout" style="padding:9px 16px; font-size:12px; color:var(--paper); border-color:var(--line-dark);">Lock</button>
+      <a href="index.html" class="btn btn-alarm" style="padding:9px 16px; font-size:12px; text-decoration:none;">Exit to site</a>
+    </div>
+  </div>
+  <div class="adm-wrap">
+    <div class="adm-note" id="admModeNote"></div>
+
+    <div class="adm-tabs">
+      <button class="adm-tab on" data-admtab="compose">＋ New post</button>
+      <button class="adm-tab" data-admtab="manage">Manage posts</button>
+      <button class="adm-tab" data-admtab="export">Export</button>
+    </div>
+
+    <!-- COMPOSE -->
+    <div class="adm-pane on" data-admpane="compose">
+      <div class="adm-grid">
+        <div class="adm-card">
+          <div class="adm-field">
+            <label>Section</label>
+            <div class="adm-seg" id="admSection">
+              <button data-v="videos" class="on"><span class="em">🎬</span>Koovam Videos</button>
+              <button data-v="cartoons"><span class="em">✏️</span>Awareness Cartoons</button>
+              <button data-v="media"><span class="em">📰</span>Koovam in Media</button>
+            </div>
+          </div>
+          <div class="adm-field">
+            <label>Media type</label>
+            <div class="adm-seg" id="admType">
+              <button data-v="youtube" class="on"><span class="em">▶</span>YouTube video</button>
+              <button data-v="image"><span class="em">🖼</span>Image</button>
+              <button data-v="link"><span class="em">🔗</span>Article / link</button>
+            </div>
+          </div>
+          <div class="adm-field">
+            <label id="admUrlLabel">YouTube URL</label>
+            <input type="url" id="admUrl" placeholder="https://www.youtube.com/watch?v=…">
+            <div class="adm-hint" id="admUrlHint">Paste any YouTube link — watch, share (youtu.be) or Shorts. Thumbnail and player are automatic.</div>
+          </div>
+          <div class="adm-field" id="admUploadWrap" style="display:none;">
+            <label class="adm-file">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 16V4m0 0l-4 4m4-4l4 4"/><path d="M4 16v3a1 1 0 001 1h14a1 1 0 001-1v-3"/></svg>
+              <span>Upload from this device (max 8 MB)</span>
+              <input type="file" id="admFile" accept="image/*">
+            </label>
+            <div class="adm-progress" id="admProgress"></div>
+          </div>
+          <div class="adm-field" id="admThumbField" style="display:none;">
+            <label>Thumbnail image URL <span style="text-transform:none; letter-spacing:0;">(optional)</span></label>
+            <input type="url" id="admThumb" placeholder="https://…/preview.jpg">
+          </div>
+          <div class="adm-2col">
+            <div class="adm-field">
+              <label>Title — English</label>
+              <input type="text" id="admTitleEn" placeholder="Drone survey: Kesavaram to Tiruvallur">
+            </div>
+            <div class="adm-field">
+              <label class="ta">தலைப்பு — தமிழ்</label>
+              <input type="text" id="admTitleTa" placeholder="ட்ரோன் ஆய்வு: கேசவரம் முதல் திருவள்ளூர் வரை">
+            </div>
+          </div>
+          <div class="adm-2col">
+            <div class="adm-field">
+              <label>Description — English</label>
+              <textarea id="admDescEn" placeholder="What does this show? Why does it matter?"></textarea>
+            </div>
+            <div class="adm-field">
+              <label class="ta">விளக்கம் — தமிழ்</label>
+              <textarea id="admDescTa" placeholder="இது எதைக் காட்டுகிறது? ஏன் முக்கியம்?"></textarea>
+            </div>
+          </div>
+          <div class="adm-2col">
+            <div class="adm-field">
+              <label>Source / credit</label>
+              <input type="text" id="admSource" placeholder="e.g. Campaign drone team · The Hindu">
+            </div>
+            <div class="adm-field">
+              <label>Date</label>
+              <input type="date" id="admDate">
+            </div>
+          </div>
+          <div class="adm-field">
+            <label>Tags <span style="text-transform:none; letter-spacing:0;">(comma separated, EN or தமிழ்)</span></label>
+            <input type="text" id="admTags" placeholder="drone, sewage, tiruvallur, செம்பரம்பாக்கம்">
+          </div>
+          <button class="btn btn-alarm" id="admPost" style="width:100%; margin-top:6px;">Publish to archive</button>
+          <div class="adm-hint" id="admPostMsg" style="text-align:center; margin-top:10px;"></div>
+        </div>
+        <div>
+          <div class="adm-preview-label">Live preview — how it appears on the site</div>
+          <div class="rr-grid" style="grid-template-columns:1fr; margin-top:0;" id="admPreview"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MANAGE -->
+    <div class="adm-pane" data-admpane="manage">
+      <div class="adm-card">
+        <div class="adm-preview-label">Published posts</div>
+        <div class="adm-list" id="admList"></div>
+      </div>
+    </div>
+
+    <!-- EXPORT -->
+    <div class="adm-pane" data-admpane="export">
+      <div class="adm-card">
+        <div class="adm-preview-label">Move preview posts</div>
+        <p style="font-size:13.5px; line-height:1.65; color:var(--ink-soft); margin-bottom:14px;">
+          Only needed in preview mode (before Supabase is connected): this block contains all posts so
+          you can carry them over — paste it into <code>assets/config.js</code> replacing the
+          <code>window.KOOVAM_SEED_POSTS</code> block, or keep it as a backup.
+        </p>
+        <textarea class="adm-json" id="admJson" readonly></textarea>
+        <div style="display:flex; gap:10px; margin-top:12px; flex-wrap:wrap;">
+          <button class="btn btn-primary" id="admCopyJson">Copy block</button>
+          <button class="btn btn-ghost-light" id="admRefreshJson">Refresh</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="assets/config.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="assets/archive.js"></script>
+<script src="assets/site.js"></script>
+<script src="assets/admin.js"></script>
+</body>
+</html>
